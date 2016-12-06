@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost/questions');  TO DO
+mongoose.connect('mongodb://localhost/questions'); 
 
 var Question = require("./questionModel");
 
@@ -23,3 +23,5 @@ app.get('/questions', function(req, res) {
 		res.send(questions);
 	});
 });
+
+app.listen(8006);

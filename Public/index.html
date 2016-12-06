@@ -1,51 +1,54 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="node_modules/font-awesome/css/font-awesome.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title></title>
 </head>
-<body ng-app="trackerApp" ng-controller="mainCtrl">
-	<div class="back">
-		<h1>Tracker</h1>
-	</div>
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 col-md-offset-3">
-				<input type="text" id="question" placeholder="what is your question?" />
-				
+<body ng-app="trackerApp" >
+	<div ng-controller="mainCtrl">
+		<div class="back">
+			<h1>Tracker</h1>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<input type="text" id="question" placeholder="what is your question?" />
+					
+				</div>
+			</div>
+
+			<div class="row photo">
+					
+			</div>
+
+			<div class="row box">
+				<div class="col-md-6">
+					<input type="checkbox" ng-model="check">
+					<h2>Time</h2>
+					<input type="text" id="time" placeholder="when do you want your reminder?" ng-model="que"/><br>
+					
+				</div>
+				<div class="col-md-6">
+					<input type="checkbox" ng-model="check">
+					<h2>Intervals</h2>
+					<input type="text" id="start" placeholder="strat time" /><br>
+					<input type="text" id="end" placeholder="end time" /><br>
+					<input type="text" id="int" placeholder="intervals" /><br>
+					
+				</div>
+			</div>
+			<div>
+				<button class="btn btn-primary" ng-click="addQuestion()">start tracker</button>
 			</div>
 		</div>
 
-		<div class="row photo">
-				
-		</div>
-
-		<div class="row box">
-			<div class="col-md-6">
-				<input type="checkbox" ng-model="check">
-				<h2>Time</h2>
-				<input type="text" id="time" placeholder="when do you want your reminder?" ng-model="que"/><br>
-				
-			</div>
-			<div class="col-md-6">
-				<input type="checkbox" ng-model="check">
-				<h2>Intervals</h2>
-				<input type="text" id="start" placeholder="strat time" /><br>
-				<input type="text" id="end" placeholder="end time" /><br>
-				<input type="text" id="int" placeholder="intervals" /><br>
-				
-			</div>
-		</div>
-		<div>
-			<button class="btn btn-primary" ng-click="addQuestion()">start tracker</button>
-		</div>
-	</div>
-
-	
+	</div>	
 	<script src="angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/app.js"></script>
 	<script type="text/javascript" src="js/services/service.js"></script>
 	<script type="text/javascript" src="js/controllers/controller.js"></script>
+	
 </body>
 </html>
