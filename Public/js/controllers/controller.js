@@ -1,4 +1,4 @@
-app.controller('mainCtrl', function($scope) {
+app.controller('mainCtrl', ['$scope', 'trackService', function($scope, rate) {
 
 	//the array where you place your data from the user
 	$scope.feel = [];
@@ -16,4 +16,4 @@ app.controller('mainCtrl', function($scope) {
 
 		$scope.feel.push(question);
 	};
-});
+}]);
