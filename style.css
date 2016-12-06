@@ -1,0 +1,32 @@
+.box {
+	border: 1px solid #e6f2ff;
+}
+
+h1 {
+	text-align: center;
+}
+
+.back {
+	background-color: #e6f2ff;
+}
+
+.photo {
+	background-image: url('https://cdn.pixabay.com/photo/2015/02/26/17/56/clock-650753_960_720.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 300px;
+	width:100%;
+}
+
+input {
+	width:100%;
+
+}
+
+button {
+	width:100%;
+}
+
+#question {
+	height:50px;
+}
