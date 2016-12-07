@@ -11,7 +11,7 @@ var questionSchema = new Schema({
 	startTime: {type: Date, default: Date.now},
 	endTime: {type: Date, default: null},
 	askingTimes: [Number],
-	answers: [answerSchem]
+	answers: {type: [answerSchem], default: []}
 });
 
 var Question = mongoose.model("Question", questionSchema);

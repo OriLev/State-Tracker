@@ -35,4 +35,15 @@ app.get('/questions', function(req, res) {
 	});
 });
 
-app.listen(8000);
+app.post('/questions', function(req, res, next){
+	var question = new Question(req.body);
+
+	question.save(function(err, beer) {
+  		if (err) { return next(err); }
+
+  		res.json(question);
+
+  })
+});
+
+app.listen(8006);
