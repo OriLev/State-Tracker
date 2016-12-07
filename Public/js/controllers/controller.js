@@ -3,6 +3,8 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
     $scope.posts = posts.posts;
 
   });
+
+
 	// //the array where you place your data from the user
 	// $scope.feel = [];
 
@@ -29,3 +31,6 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 		// $scope.posts.push(question);
 	};
 }]);
+
+
+
