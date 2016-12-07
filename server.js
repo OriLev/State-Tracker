@@ -38,12 +38,23 @@ app.get('/questions', function(req, res) {
 app.post('/questions', function(req, res, next){
 	var question = new Question(req.body);
 
-	question.save(function(err, beer) {
+	question.save(function(err, question) {
   		if (err) { return next(err); }
 
   		res.json(question);
 
   })
 });
+
+app.put('/questions/:_id', function(req, res, next){
+	
+	Question.update({_id: req.params._id}, {$push: {"answers": req.body}}, function(error, question){
+
+  				res.json(question);
+
+  		
+	});
+});
+
 
 app.listen(8006);
