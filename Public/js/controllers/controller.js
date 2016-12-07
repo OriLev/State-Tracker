@@ -17,6 +17,15 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 			// int:$scope.intervals
 		};
 
-		$scope.posts.push(question);
+		posts.create(question).success(function(data){
+			console.log('got back from the server successfully');
+			console.log(data);
+			posts.getAll().then(function(data){
+				console.log('here lies the data in the controller from the get all');
+				console.log(data)
+			});
+		});
+
+		// $scope.posts.push(question);
 	};
 }]);
