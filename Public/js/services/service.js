@@ -23,13 +23,13 @@ app.factory('posts', ['$http', function ($http) {
     
   };
 
-  // track.delete = function (post) {
-  //   console.log(post);
-  //   return $http.delete('/' + post._id).success(function(data){
-  //   	console.log(track.posts.indexOf(post));
-  //   	track.posts.splice(track.posts.indexOf(post),1);
-  //   });
-  // };
+  track.delete = function (post) {
+    console.log(post);
+    return $http.delete('/' + post).success(function(data){
+    	console.log(track.posts.indexOf(post));
+    	track.posts.splice(track.posts.indexOf(post),1);
+    });
+  };
 
   // beerService.put = function(beerId, rate) {
   // 	console.log("edit this beer" + beerId);
