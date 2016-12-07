@@ -1,19 +1,22 @@
-app.controller('mainCtrl', ['$scope', 'trackService', function($scope, rate) {
+app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
+	posts.getAll().then(function () {
+    $scope.posts = posts.posts;
 
-	//the array where you place your data from the user
-	$scope.feel = [];
+  });
+	// //the array where you place your data from the user
+	// $scope.feel = [];
 
 	//recieving the specification from the user
 	$scope.addQuestion = function(q) {
 
 		var question = {
-			qusetion:$scope.que,
-			time:$scope.time,
-			start:$scope.start,
-			end:$scope.end,
-			int:$scope.intervals
+			question:$scope.que,
+			time:$scope.time
+			// start:$scope.start,
+			// end:$scope.end,
+			// int:$scope.intervals
 		};
 
-		$scope.feel.push(question);
+		$scope.posts.push(question);
 	};
 }]);
