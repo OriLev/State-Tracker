@@ -2,7 +2,7 @@
 
 app.factory('posts', ['$http', function ($http) {
   var track = {
-    posts: [{question:"why did i learn code?", time:12}]
+    posts: []
   };
 
   // $scope.beers = beers.beers;
@@ -19,7 +19,7 @@ app.factory('posts', ['$http', function ($http) {
   track.create = function (post) {
     console.log('went from the controller to the service');
     console.log(post);
-    return $http.post('/' , post);
+    return $http.post('/questions' , post);
     
   };
 
