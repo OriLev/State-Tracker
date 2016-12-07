@@ -18,10 +18,21 @@ app.get('/', function(req, res) {
 	res.sendFile(__dirname + "/index.html");
 });
 
+// app.get('/', function(req,res) {
+// 	res.send("You are inside the fullstack project")
+// });
+
+// app.get('/questions', function (req, res) {
+//   res.json({beers: [
+//     { name: '512 IPA', style: 'IPA', image_url: 'http://bit.ly/1XtmB4d', abv: 5 },
+//     { name: '512 Pecan Porter', style: 'Porter', image_url: 'http://bit.ly/1Vk5xj4', abv: 4 }
+//   ]});
+// });
+
 app.get('/questions', function(req, res) {
 	Question.find(function(error, questions) {
 		res.send(questions);
 	});
 });
 
-app.listen(8006);
+app.listen(8000);

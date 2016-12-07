@@ -8,5 +8,11 @@ var answerSchem = new Schema ({
 
 var questionSchema = new Schema({
 	question: String,
+	startTime: {type: Date, default: Date.now},
+	endTime: {type: Date, default: null},
+	askingTimes: [Number],
 	answers: [answerSchem]
 });
+
+var Question = mongoose.model("Question", questionSchema);
+module.exports = Question;
