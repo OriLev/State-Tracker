@@ -57,4 +57,16 @@ app.put('/questions/:_id', function(req, res, next){
 });
 
 
+app.delete('/questions/:id', function(req, res) {
+    console.log(req.params.id);
+    Beer.findByIdAndRemove(req.params.id, function(err, data) {
+        if(err) {
+            console.log(err);
+            return next(err);
+        }
+        res.send(data);
+    });
+});
+
+
 app.listen(8006);
