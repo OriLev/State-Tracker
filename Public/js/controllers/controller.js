@@ -3,10 +3,7 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
     $scope.posts = posts.posts;
 
   });
-
-
-	// //the array where you place your data from the user
-	// $scope.feel = [];
+	
 
 	//recieving the specification from the user
 	$scope.addQuestion = function(q) {
@@ -47,45 +44,46 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 //Module timeout ve scope servislerini ekledik. Bunlar Anguların bizim için sağladığı yapısal servislerdir.
 app.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
 
- //Adding initial value for counter
- //counter modelimiz için ilk değer atamasını yaptık.   
-$scope.counter = 5;
-var stopped;
-var ans;
-var _run = true;
-var timeBefore, timeAfter;
-//timeout function
-//1000 milliseconds = 1 second
-//Every second counts
-//Cancels a task associated with the promise. As a result of this, the //promise will be resolved with a rejection.  
-$scope.stop = function(){
-   $timeout.cancel(stopped);  
-   _run = false; 
-};
+	 //Adding initial value for counter
+	 //counter modelimiz için ilk değer atamasını yaptık.   
+	$scope.counter = 5;
+	var stopped;
+	var ans;
+	var _run = true;
+	var timeBefore, timeAfter;
+	//timeout function
+	//1000 milliseconds = 1 second
+	//Every second counts
+	//Cancels a task associated with the promise. As a result of this, the //promise will be resolved with a rejection.  
+	$scope.stop = function(){
+	   $timeout.cancel(stopped);  
+	   _run = false; 
+	};
 
-$scope.countdown = function() {
-	// while(run)
-	// {
-		if($scope.counter === 0) {
-			ans=prompt("bla");
-			console.log(ans);
+	$scope.countdown = function() {
+		// while(run)
+		// {
+			if($scope.counter === 0) {
+				ans=prompt("bla");
+				console.log(ans);
 
-			$scope.counter = 5;
-			console.log(_run);
+				$scope.counter = 5;
+				console.log(_run);
 
 
-		}
-	//}
-    stopped = $timeout(function() {
-       console.log($scope.counter);
-     $scope.counter--;   
-     $scope.countdown();   
-    }, 1000);
-  };
-   
-    
- 
+			}
+		//}
+	    stopped = $timeout(function() {
+	       console.log($scope.counter);
+	     $scope.counter--;   
+	     $scope.countdown();   
+	    }, 1000);
+	  };
+	   
+	    
+	 
 
 
 }]);
+
 

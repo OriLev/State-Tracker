@@ -10,6 +10,7 @@
 <body ng-app="trackerApp" >
 	<div ng-controller="mainCtrl" id="snow">
 		<div class="back photo" >
+			
 			<h1>Tracker</h1>
 		</div>
 		<div class="container">
@@ -29,7 +30,7 @@
 						</a>
 						<h3>{{post.question}}</h3>
 						<div>{{post.askingTimes}}</div>
-					
+						
 						<div class="countDown">
 							<div ng-controller="counterCtrl">
 		 					<!--Angular Binding -->  
@@ -48,13 +49,13 @@
 
 			<div class="row box">
 				<div class="col-md-6">
-					<input type="checkbox" ng-model="check">
+					<input type="checkbox" ng-model="checkTime">
 					<h2>Time</h2>
 					<input type="text" id="time" placeholder="when do you want your reminder?" ng-model="time"/><br>
 					
 				</div>
 				<div class="col-md-6">
-					<input type="checkbox" ng-model="check">
+					<input type="checkbox" ng-model="checkInt">
 					<h2>Intervals</h2>
 					<input type="text" id="start" placeholder="strat time" /><br>
 					<input type="text" id="end" placeholder="end time" /><br>
