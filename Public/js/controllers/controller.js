@@ -10,7 +10,7 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 
 		var question = {
 			question:$scope.question,
-			askingTimes:$scope.askingTimes,
+			askingTimes:[$scope.time],
 			// clock:
 			// startTime:$scope.start,
 			// endTime:$scope.end
@@ -42,10 +42,13 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 //timeout and scope are Angular's built-in services
 //Adding injector
 //Module timeout ve scope servislerini ekledik. Bunlar Anguların bizim için sağladığı yapısal servislerdir.
-app.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
-
+app.controller("counterCtrl",['$scope', '$timeout', 'posts',function($scope,$timeout, $index){
+	
+	
+	// debugger;
 	 //Adding initial value for counter 
 	$scope.counter = 5;
+	// $timeout.posts[0].askingTimes[0];
 	var stopped;
 	var ans;
 	var _run = true;
@@ -63,7 +66,7 @@ app.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
 		// while(run)
 		// {
 			if($scope.counter === 0) {
-				ans=prompt("bla");
+				ans=prompt("How do you feel - from 1 to 10?");
 				console.log(ans);
 
 				$scope.counter = 5;
