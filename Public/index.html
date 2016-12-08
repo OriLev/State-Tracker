@@ -15,10 +15,17 @@
 		</div>
 		<div class="container">
 			<div class="row">
-				<div class="col-md-6 col-md-offset-3">
-					<input  class="que" type="text" id="question" placeholder="what is your question?" ng-model="question"/>
+				<div class="col-md-6 ">
+					<input type="text" id="question" placeholder="what is your question?" ng-model="question"/>
+				</div>
+				
+				<div class="col-md-4 ">
 					
+					<input type="text" id="question" placeholder="when do you want your reminder?" ng-model="time"/><br>
 					
+				</div>
+				<div class="col-md-2">
+					<button  id="bt" class="btn btn-primary" ng-click="addQuestion($index)">start tracker</button>
 				</div>
 			</div>
 
@@ -26,6 +33,7 @@
 				<!-- <div ng-repeat="post in posts track by $index"> -->
 					<div class="col-md-3 l" ng-repeat="post in posts track by $index">
 						<a ng-click="remove(post)">remove</a>
+						<a href="chart.html" id="chartEx" >Export chart</a>
 						<h3>{{post.question}}</h3>
 <!-- 						<div>{{post.askingTimes}}</div>
  -->						
@@ -37,6 +45,7 @@
 		    				<button class="s btn btn-primary" ng-click="countdown()">Start</button>     
 							</div>
 						</div>
+
 					</div>
 <!-- 				</div>
  -->					
@@ -44,7 +53,7 @@
 
 
 			
-
+<!-- 
 			<div class="row box">
 				<div class="col-md-6">
 					<input type="checkbox" ng-model="checkTime">
@@ -60,10 +69,10 @@
 					<input type="text" id="int" placeholder="intervals" /><br>
 					
 				</div>
-			</div>
-			<div>
-				<button class="btn btn-primary" ng-click="addQuestion($index)">start tracker</button>
-			</div>
+			</div> -->
+			<!-- <div>
+				<button  id="bt" class="btn btn-primary" ng-click="addQuestion($index)">start tracker</button>
+			</div> -->
 		</div>
 
 

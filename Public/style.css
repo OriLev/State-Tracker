@@ -1,4 +1,6 @@
-
+.posts {
+	padding-left: 12px;
+}
 
 
 .box {
@@ -37,6 +39,7 @@ button {
 
 #question {
 	height:50px;
+
 }
 
 .l {
@@ -61,7 +64,9 @@ h2 {
 	text-align: center;
 }
 
-
+#chartEx {
+	float: right;
+}
 
 body { background-color:#99b3e6; }
 #snow{
@@ -99,4 +104,10 @@ body { background-color:#99b3e6; }
   50% {background-position: 500px 500px, 100px 200px, -100px 150px;}
   100% {background-position: 500px 1000px, 200px 400px, -100px 300px;}
 }	
+
+
+
+#bt {
+	margin: 10px;
+}
 

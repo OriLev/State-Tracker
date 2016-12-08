@@ -42,9 +42,12 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 //timeout and scope are Angular's built-in services
 //Adding injector
 //Module timeout ve scope servislerini ekledik. Bunlar Anguların bizim için sağladığı yapısal servislerdir.
-app.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
-
+app.controller("counterCtrl",['$scope', '$timeout', 'posts',function($scope,$timeout, $index){
+	
+	
+	// debugger;
 	 //Adding initial value for counter 
+
 	$scope.counter =  $scope.post.askingTimes[0];//5;
 	var fla_g = $scope.post._avctive;
 	var stopped;
