@@ -10,7 +10,8 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 
 		var question = {
 			question:$scope.question,
-			askingTimes:$scope.askingTimes,
+			askingTimes:[$scope.askingTimes],
+			_avctive: true
 			// clock:
 			// startTime:$scope.start,
 			// endTime:$scope.end
@@ -23,7 +24,6 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 			posts.getAll().then(function(data){
 				console.log('here lies the data in the controller from the get all');
 				console.log(data);
-				$scope.posts.push(question);
 			});
 		});
 
@@ -45,10 +45,11 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 app.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
 
 	 //Adding initial value for counter 
-	$scope.counter = 5;
+	$scope.counter =  $scope.post.askingTimes[0];//5;
+	var fla_g = $scope.post._avctive;
 	var stopped;
 	var ans;
-	var _run = true;
+	
 	var timeBefore, timeAfter;
 	//timeout function
 	//1000 milliseconds = 1 second
@@ -56,18 +57,17 @@ app.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
 	//Cancels a task associated with the promise. As a result of this, the //promise will be resolved with a rejection.  
 	$scope.stop = function(){
 	   $timeout.cancel(stopped);  
-	   _run = false; 
+	   $scope.post._avctive = false; 
 	};
 
 	$scope.countdown = function() {
-		// while(run)
-		// {
+		$scope.post._avctive = true;		
 			if($scope.counter === 0) {
-				ans=prompt("bla");
+				ans=prompt($scope.post.question);
 				console.log(ans);
 
-				$scope.counter = 5;
-				console.log(_run);
+				$scope.counter = $scope.post.askingTimes[0];
+				console.log($scope.post.askingTimes[0]);
 
 
 			}
@@ -78,8 +78,10 @@ app.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
 	     $scope.countdown();   
 	    }, 1000);
 	  };
-	   
-	    
+	
+	if (fla_g) {
+		$scope.countdown();
+	}
 	 
 
 

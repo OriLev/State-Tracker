@@ -12,7 +12,8 @@ var questionSchema = new Schema({
 	startTime: {type: Date, default: Date.now},
 	endTime: {type: Date, default: null},
 	askingTimes: [Number],
-	answers: {type: [answerSchem], default: []}
+	answers: {type: [answerSchem], default: []},
+	_active: {type: Boolean, default: true}
 	// answers: {type: Array, default: []}
 });
 
