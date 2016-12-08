@@ -31,13 +31,6 @@ app.factory('posts', ['$http', function ($http) {
     });
   };
 
-  // beerService.put = function(beerId, rate) {
-  // 	console.log("edit this beer" + beerId);
-  // 	return $http.put('/beers/' + beerId).success(function(data){
-  // 		console.log(data);
-
-  // 	});
-  // };
 
   return track;
 }]);
