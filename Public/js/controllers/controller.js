@@ -23,7 +23,7 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 			posts.getAll().then(function(data){
 				console.log('here lies the data in the controller from the get all');
 				console.log(data);
-				$scope.posts.push(question);
+				// $scope.posts.push(question);
 			});
 		});
 

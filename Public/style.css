@@ -61,7 +61,9 @@ h2 {
 	text-align: center;
 }
 
-
+#chartEx {
+	float: right;
+}
 
 body { background-color:#99b3e6; }
 #snow{
