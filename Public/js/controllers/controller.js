@@ -44,8 +44,7 @@ app.controller('mainCtrl', ['$scope', 'posts', function($scope, posts) {
 //Module timeout ve scope servislerini ekledik. Bunlar Anguların bizim için sağladığı yapısal servislerdir.
 app.controller("counterCtrl",['$scope','$timeout', function($scope,$timeout){
 
-	 //Adding initial value for counter
-	 //counter modelimiz için ilk değer atamasını yaptık.   
+	 //Adding initial value for counter 
 	$scope.counter = 5;
 	var stopped;
 	var ans;
