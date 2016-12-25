@@ -2,7 +2,7 @@ var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 
-mongoose.connect('mongodb://localhost/questions'); 
+mongoose.connect(process.env.MONGOLAB_RED_URI ||'mongodb://localhost/rereddit-final');
 
 var Question = require("./questionModel");
 
@@ -22,12 +22,12 @@ app.get('/', function(req, res) {
 // 	res.send("You are inside the fullstack project")
 // });
 
-// app.get('/questions', function (req, res) {
-//   res.json({beers: [
-//     { name: '512 IPA', style: 'IPA', image_url: 'http://bit.ly/1XtmB4d', abv: 5 },
-//     { name: '512 Pecan Porter', style: 'Porter', image_url: 'http://bit.ly/1Vk5xj4', abv: 4 }
-//   ]});
-// });
+app.get('/questions', function (req, res) {
+  res.json({beers: [
+    { name: '512 IPA', style: 'IPA', image_url: 'http://bit.ly/1XtmB4d', abv: 5 },
+    { name: '512 Pecan Porter', style: 'Porter', image_url: 'http://bit.ly/1Vk5xj4', abv: 4 }
+  ]});
+});
 
 app.get('/questions', function(req, res) {
 	Question.find(function(error, questions) {
@@ -69,4 +69,4 @@ app.delete('/questions/:id', function(req, res) {
 });
 
 
-app.listen(8006);
+app.listen(process.env.PORT || '4000');
